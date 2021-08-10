@@ -1,3 +1,4 @@
+import GameSaving from './GameSaving';
 import json from './parser';
 import read from './reader';
 
@@ -7,7 +8,8 @@ export default class GameSavingLoader {
     try {
       const data = await read();
       const value = await json(data);
-      return value;
+      const save = await new GameSaving(value);
+      return save;
     } catch (error) {
       return error;
     }
