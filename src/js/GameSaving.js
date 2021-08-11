@@ -1,5 +1,7 @@
 export default class GameSaving {
-  constructor(response) {
-    this.save = response;
+  constructor(result) {
+    this.id = result.id;
+    this.created = result.created;
+    this.userInfo = result.userInfo;
   }
 }
